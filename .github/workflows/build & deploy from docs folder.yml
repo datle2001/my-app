@@ -1,48 +1,52 @@
 name: build & deploy from /public
 
-on:
-  push:
-    branches: [ "master" ]
+	on:
+    push:
+      branches: [ "master" ]
+      
+    pull_request:
+      branches: [ "master" ]
+  
+    # Allows you to run this workflow manually from the Actions tab
+    workflow_dispatch:
+    
+	jobs:
+    build:
+      runs-on: ubuntu-latest
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
-  build:
-    runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [14.x, 16.x, 18.x]
-
-    steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v4
-
-      - name: Install Node.js ${{ matrix.node-version }}
-      - uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: 'npm'
-
-      - name: Build into docs
-      - run: npm run build
-
-      - name: Upload artifact for deployment job
-        uses: actions/upload-artifact@v3
-        with:
-          name: node-app
-          path: .
-
-  deploy:
-    runs-on: ubuntu-latest
-    environment: github-pages
-    needs: build
-
-    steps:
-      - name: Download artifact from build job
-        uses: actions/download-artifact@v3
-        with:
-          name: node-app
-
-      - name: Deploy to Github Page
-        uses: actions/deploy-pages@v4
+      strategy:
+        matrix:
+          node-version: [14.x, 16.x, 18.x]
+  
+      steps:
+        # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+        - uses: actions/checkout@v4
+  
+        - name: Install Node.js ${{ matrix.node-version }}
+        - uses: actions/setup-node@v3
+          with:
+            node-version: ${{ matrix.node-version }}
+            cache: 'npm'
+  
+        - name: Build into docs
+        - run: npm run build
+  
+        - name: Upload artifact for deployment job
+          uses: actions/upload-artifact@v3
+          with:
+            name: node-app
+            path: .
+  
+    deploy:
+      runs-on: ubuntu-latest
+      environment: github-pages
+      needs: build
+  
+      steps:
+        - name: Download artifact from build job
+          uses: actions/download-artifact@v3
+          with:
+            name: node-app
+  
+        - name: Deploy to Github Page
+          uses: actions/deploy-pages@v4
