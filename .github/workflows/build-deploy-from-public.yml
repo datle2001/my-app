@@ -1,4 +1,4 @@
-name: build-deploy-from-public-folder
+name: build-deploy-from-public
 
 on:
  push:
