@@ -42,8 +42,9 @@ jobs:
    - name: Upload artifact for deployment job
      uses: actions/upload-artifact@v3
      with:
-      name: node-app
-      path: .
+      path: ./public/_site
+      name: github-pages
+      retention-days: 1
       
    - name: Build
      uses: actions/jekyll-build-pages@v1
