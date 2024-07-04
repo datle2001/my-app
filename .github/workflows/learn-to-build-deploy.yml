@@ -36,6 +36,13 @@ jobs:
 
       - name: Print current directory
         run: ls
+        
+      - name: Deploy to gh-pages
+        run: |
+          git config user.email "73367400+datle2001@users.noreply.github.com"
+          git config user.name "Dat Le"
+          git remote set-url origin https://datle2001:${{ secrets.PAT }}@github.com/datle2001/my-app.git
+          npm run deploy
           
       
 
