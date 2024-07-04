@@ -25,30 +25,12 @@ jobs:
       ref: master
       submodules: recursive
      
-   - name: Setup Node.js
-     uses: actions/setup-node@v4.0.2
+   - name: Install and Build
+     run: |
+      npm ci
+      npm run build
+
+   - name: Deploy 🚀
+     uses: JamesIves/github-pages-deploy-action@v4
      with:
-      node-version: 20
-
-   - name: Install dependencies
-     run: npm install react-scripts --save
-
-   - name: Build with npm
-     run: npm run build
-
-   - name: Install gh-pages
-     run: npm install --save gh-pages
-
-
- deploy:
-  runs-on: ubuntu-latest
-  
-  needs: build
-  
-  steps:
-   - name: Deploy with npm
-     run: npm run deploy
-
-  environment:
-   name: github-pages
-   url: ${{ steps.deployment.outputs.page_url }}
+      folder: build # The folder the action should deploy.
