@@ -29,7 +29,6 @@ jobs:
       - name: Change to app directory
         run: |
           pwd
-          cd ../
           ls
 
       - name: Install dependencies
