@@ -36,7 +36,7 @@ jobs:
 
       - name: Make a copy 404.html from index.html
         run: |
-          npm i shx --dev
+          npm i -g shx --dev
           shx cp index.html 404.html
 
       - name: Print current directory
