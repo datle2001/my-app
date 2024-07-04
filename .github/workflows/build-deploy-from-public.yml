@@ -28,11 +28,6 @@ jobs:
         with:
           node-version: 20.x
 
-      - name: Change to app directory
-        run: |
-          pwd
-          ls
-
       - name: Install dependencies
         run: npm install
           
@@ -41,8 +36,8 @@ jobs:
 
       - name: Set url
         run: |
-          echo ${{ env.SET_URL_TOKEN }}
-          git remote set-url origin https://datle2001:${{ env.SET_URL_TOKEN }}@github.com/datle2001/my-app
+          echo ${{ vars.SET_URL_TOKEN }}
+          git remote set-url origin https://datle2001:${{ vars.SET_URL_TOKEN }}@github.com/datle2001/my-app
 
       - name: Deploy
         run: npm run deploy
