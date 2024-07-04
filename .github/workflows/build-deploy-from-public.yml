@@ -43,6 +43,9 @@ jobs:
 
     steps:
       - name: Deploy
-        run: npm run deploy
+        run: |
+          pwd
+          ls
+          npm run deploy
 
 
