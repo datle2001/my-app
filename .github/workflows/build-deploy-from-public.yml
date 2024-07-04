@@ -45,6 +45,7 @@ jobs:
       - name: Deploy
         run: |
           pwd
+          ls
           cd ../
           pwd
           ls
