@@ -37,5 +37,7 @@ jobs:
     needs: build
 
     steps:
+      - name: Deploy
+        run: npm run deploy
 
 
