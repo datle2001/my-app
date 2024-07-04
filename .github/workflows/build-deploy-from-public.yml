@@ -49,12 +49,6 @@ jobs:
           submodules: recursive
           
       - name: Deploy
-        run: |
-          pwd
-          ls
-          cd ../
-          pwd
-          ls
-          # npm run deploy
+        run: npm run deploy
 
 
