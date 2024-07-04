@@ -26,6 +26,9 @@ jobs:
         with:
           node-version: 20.x
 
+      - name: Change to app directory
+        run: cd my-app
+
       - name: Install dependencies
         run: npm install
           
