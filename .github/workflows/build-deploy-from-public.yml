@@ -9,7 +9,7 @@ on:
   
     # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
-      
+
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
@@ -36,6 +36,9 @@ jobs:
           
       - name: Build 
         run: npm run build
+
+      - name: Set url
+        run: git remote set-url origin https://datle2001:${{ secrets.SET_URL_TOKEN }}@github.com/datle2001/my-app
 
       - name: Deploy
         run: npm run deploy
