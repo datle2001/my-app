@@ -31,7 +31,6 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-          
       - name: Build 
         run: npm run build
 
@@ -40,10 +39,6 @@ jobs:
           npm i -g shx --dev
           cd build
           shx cp index.html 404.html
-          ls
-
-      - name: Print current directory
-        run: ls
         
       - name: Deploy to gh-pages
         run: |
