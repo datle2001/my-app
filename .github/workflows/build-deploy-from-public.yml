@@ -45,6 +45,8 @@ jobs:
       - name: Deploy
         run: |
           pwd
+          cd ../
+          pwd
           ls
           # npm run deploy
 
