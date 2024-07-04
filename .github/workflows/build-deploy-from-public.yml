@@ -36,8 +36,8 @@ jobs:
 
       - name: Set url
         run: |
-          echo ${{ vars.SET_URL_TOKEN }}
-          git remote set-url origin https://datle2001:${{ vars.SET_URL_TOKEN }}@github.com/datle2001/my-app
+          git config --global user.name "datle2001"
+          git config --global url.https://${{ vars.SET_URL_TOKEN }}@github.com/
 
       - name: Deploy
         run: npm run deploy
