@@ -34,6 +34,9 @@ jobs:
       - name: Build 
         run: npm run build
 
+      - name: Make a copy 404.html from index.html
+        run: shx cp index.html 404.html
+        
       - name: Print current directory
         run: ls
         
