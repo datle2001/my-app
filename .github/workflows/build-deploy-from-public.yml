@@ -35,7 +35,7 @@ jobs:
         run: npm run build
 
       - name: Set username
-        run: git config url.https://${{ secrets.PAT }}@github.com/.insteadOf https://github.com/
+        run: git config url.https://datle2001:${{ secrets.PAT }}@github.com/.insteadOf https://github.com/
         
       - name: Deploy
         run: npm run deploy
