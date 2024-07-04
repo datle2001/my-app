@@ -42,6 +42,12 @@ jobs:
     needs: build
 
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: master
+          submodules: recursive
+          
       - name: Deploy
         run: |
           pwd
