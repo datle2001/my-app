@@ -1,7 +1,7 @@
 export const Header = () => {
   return (
     <>
-      <a href='./products'>Product</a>
+      <a href='./products'>Products</a>
     </>
   )
 }
