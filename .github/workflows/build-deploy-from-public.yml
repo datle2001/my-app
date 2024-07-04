@@ -46,6 +46,6 @@ jobs:
         run: |
           pwd
           ls
-          npm run deploy
+          # npm run deploy
 
 
