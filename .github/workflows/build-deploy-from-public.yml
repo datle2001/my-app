@@ -9,9 +9,6 @@ on:
   
     # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
- 
-permissions:
-  contents: 'write'
       
 jobs:
   build:
@@ -23,7 +20,12 @@ jobs:
         with:
           ref: master
           submodules: recursive
-        
+      
+      - name: Install Node.js
+        uses: action/setup-node@v4.0.2
+        with:
+          node-version: 20.x
+
       - name: Install dependencies
         run: npm install
           
@@ -36,5 +38,5 @@ jobs:
 
     steps:
       - name: Deploy
-        
+
 
