@@ -25,17 +25,21 @@ jobs:
       ref: master
       submodules: recursive
      
-   - name: Build with Jekyll
-     uses: actions/jekyll-build-pages@v1
+   - name: Setup Node.js
+     uses: actions/setup-node@v4.0.2
      with:
-      source: ./public
-      destination: ./public/_site
-      future: false
+      node-version: 20
+
+   - name: Install dependencies
+     run: npm install react-scripts --save
+
+   - name: Build with npm
+     run: npm run build
       
    - name: Upload artifact for deployment job
      uses: actions/upload-pages-artifact@v3
      with:
-      path: ./public/_site
+      path: ./build/_site
       name: github-pages
       retention-days: 1
      
