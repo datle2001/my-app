@@ -39,7 +39,8 @@ jobs:
         
       - name: Deploy to gh-pages
         run: |
-          git config user.email "datquangle2802@gmail.com"
+          git config user.email "73367400+datle2001@users.noreply.github.com"
+          git config user.name "Dat Le"
           npm run deploy
           
       
