@@ -11,8 +11,7 @@ on:
  workflow_dispatch:
  
 permissions:
- id-token: 'write'
- pages: 'write'
+ contents: 'write'
       
 jobs:
  build:
