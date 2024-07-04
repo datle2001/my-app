@@ -30,18 +30,18 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-          
-      - name: Build 
-        run: npm run build
 
       - name: Make a copy 404.html from index.html
         run: |
           npm i -g shx --dev
-          pwd
-          ls
           cd public
-          ls
           shx cp index.html 404.html
+          ls
+          
+      - name: Build 
+        run: npm run build
+
+      
 
       - name: Print current directory
         run: ls
