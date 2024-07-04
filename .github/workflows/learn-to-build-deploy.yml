@@ -1,4 +1,4 @@
-name: build-deploy-from-public
+name: learn-to-build-deploy
 
 on:
   push:
