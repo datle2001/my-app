@@ -41,8 +41,8 @@ jobs:
 
       - name: Set url
         run: |
-          echo ${{ secrets.SET_URL_TOKEN }}
-          git remote set-url origin https://datle2001:${{ secrets.SET_URL_TOKEN }}@github.com/datle2001/my-app
+          echo ${{ env.SET_URL_TOKEN }}
+          git remote set-url origin https://datle2001:${{ env.SET_URL_TOKEN }}@github.com/datle2001/my-app
 
       - name: Deploy
         run: npm run deploy
