@@ -36,9 +36,11 @@ jobs:
 
       - name: Print current directory
         run: ls
-
-      - name: Deploy to GitHub Pages
-        run: npm run deploy
+        
+      - name: Deploy to gh-pages
+        run: |
+          git config user.email "datquangle2802@gmail.com"
+          npm run deploy
           
       
 
