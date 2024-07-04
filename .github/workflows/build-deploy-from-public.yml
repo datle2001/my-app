@@ -34,12 +34,6 @@ jobs:
       - name: Build 
         run: npm run build
 
-      - name: Set url
-        run: |
-          git config --global user.email "datquangle2802@gmail.com"
-          git config --global user.name "datle2001"
-          git config --global url.https://${{ secrets.PAT }}@github.com/.insteadOf https://github.com/
-
       - name: Deploy
         run: npm run deploy
           
