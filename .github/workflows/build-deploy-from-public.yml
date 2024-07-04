@@ -35,7 +35,7 @@ jobs:
         run: npm run build
 
       - name: Set username
-        run: git config --global user.name "datle2001"
+        run: git config --global user.name datle2001
         
       - name: Deploy
         run: npm run deploy
