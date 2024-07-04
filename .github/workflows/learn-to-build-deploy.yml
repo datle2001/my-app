@@ -39,6 +39,7 @@ jobs:
           npm i -g shx --dev
           pwd
           ls
+          cd src
           shx cp index.html 404.html
 
       - name: Print current directory
