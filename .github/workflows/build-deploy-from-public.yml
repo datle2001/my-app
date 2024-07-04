@@ -37,7 +37,7 @@ jobs:
       - name: Set url
         run: |
           git config --global user.name "datle2001"
-          git config --global url.https://${{ vars.SET_URL_TOKEN }}@github.com/
+          git config --global url.https://${{ secrets.PAT }}@github.com/
 
       - name: Deploy
         run: npm run deploy
