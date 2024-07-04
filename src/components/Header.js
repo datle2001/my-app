@@ -1,7 +1,9 @@
+import { Link } from "react-router-dom"
+
 export const Header = () => {
   return (
     <>
-      <a href='./products'>Go to Products</a>
+      <Link to={'./products'}>Go to Products</Link>
     </>
   )
 }
