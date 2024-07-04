@@ -36,6 +36,9 @@ jobs:
 
       - name: Print current directory
         run: ls
+
+      - name: Deploy to GitHub Pages
+        run: npm run deploy
           
       
 
