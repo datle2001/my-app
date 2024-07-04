@@ -35,7 +35,13 @@ jobs:
 
    - name: Build with npm
      run: npm run build
-      
+
+   - name: Install serve
+     run: npm install -g serve
+
+   - name: Serve with a static server
+     run: serve -s build
+     
    - name: Upload artifact for deployment job
      uses: actions/upload-pages-artifact@v3
      with:
